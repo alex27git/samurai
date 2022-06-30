@@ -1,39 +1,33 @@
 import React from 'react';
 import './App.css';
-import {Header} from "./Header";
-import {Technologes} from "./Technologes";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <div>
-//         <h3>What to learn</h3>
-//         <div>
-//           <input/>
-//           <button>+</button>
-//         </div>
-//         <ul>
-//           <li><input type="checkbox" checked={true}/> <span>HTML&CSS</span></li>
-//           <li><input type="checkbox" checked={true}/> <span>JS</span></li>
-//           <li><input type="checkbox" checked={false}/> <span>React</span></li>
-//         </ul>
-//         <div>
-//           <button>All</button>
-//           <button>Active</button>
-//           <button>Completed</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+import {Accordion} from "./Components/Accordion/Accordion";
+import {Rating} from "./Components/Raiting/Rating";
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <Technologes/>
+    <div className="App">
+      <PageTitle title={"This is APP Components"}/>
+      <PageTitle title={"My friends"}/>
+      <Accordion titleValue={"Меню"} collapsed={true}/>
+      <Accordion titleValue={"Users"} collapsed={false} />
+      <Rating value={0}/>
+      <Rating value={1}/>
+      <Rating value={2}/>
+      <Rating value={3}/>
+      <Rating value={4}/>
+      <Rating value={5}/>
     </div>
   );
+}
+
+type PageTitlePropsType = {
+  title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
+  return(
+    <h1> {props.title}</h1>
+    )
 }
 
 export default App;
